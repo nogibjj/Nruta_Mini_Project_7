@@ -12,8 +12,17 @@
 .
 ├── Makefile
 ├── README.md
+├── __init__.py
+├── biopics-cli
+├── cli_tool.py
 ├── data
 │   └── biopics.csv
+├── .github
+│   └── workflows
+│       └── cicd.yml
+├── .devcontainer/
+│   ├── devcontainer.json
+|   └── Dockerfile
 ├── main.py
 ├── mylib
 │   ├── __init__.py
@@ -21,8 +30,8 @@
 │   ├── query.py
 │   └── transform_load.py
 ├── requirements.txt
-├── setup.sh
-└── test_main.py
+├── setup.py
+└──  test_main.py
 ```
 
 ## 📦 Files and Directories
@@ -112,4 +121,5 @@ After running the SQL query, the output is as follows:
 
 ## 📃 CLI Expected Output
 After running the Year Query, the expected output will be a list of biopics filtered by the specified release year. Here’s an example of what the output might look like:
+![image](https://github.com/user-attachments/assets/5d7ee9c3-caad-4372-9d18-51bb53f6da8a)
 
