@@ -1,4 +1,3 @@
-import main
 from mylib.extract import extract
 from mylib.transform_load import load
 from mylib.query import run_query
