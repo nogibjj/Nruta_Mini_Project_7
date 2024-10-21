@@ -48,7 +48,7 @@ git clone https://github.com/nogibjj/Nruta_Mini_Project_6
 
 2. Navigate to the project directory:
 ```
-cd Nruta_Mini_Project_6
+cd Nruta_Mini_Project_7
 ```
 
 3. Install the required dependencies:
@@ -107,9 +107,18 @@ pip install .
 
 The Year Query feature allows users to filter biopic data by the release year. This functionality can be particularly useful for analyzing trends in biopics over different periods. 
 
+The query is as follows:
+
+```
+SELECT DISTINCT b.title, b.year_release, s.subject
+FROM nmc_biopics_details b
+JOIN nmc_biopics_subjects s ON b.title = s.title
+WHERE b.year_release = {year}
+```
+
 #### Usage
 
-To execute a year query, run the following command:
+To execute the year query, run the following command:
 
 ```
 python cli_tool.py --year <YEAR>
@@ -122,4 +131,3 @@ After running the SQL query, the output is as follows:
 ## 📃 CLI Expected Output
 After running the Year Query, the expected output will be a list of biopics filtered by the specified release year. Here’s an example of what the output might look like:
 ![image](https://github.com/user-attachments/assets/5d7ee9c3-caad-4372-9d18-51bb53f6da8a)
-

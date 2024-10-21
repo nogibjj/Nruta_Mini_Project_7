@@ -39,7 +39,7 @@ def load(dataset="data/biopics.csv"):
                 details_values = []
                 subjects_values = []
 
-                for row in payload:  # Load all rows without a limit
+                for row in payload:
                     # Prepare values for nmc_biopics_details
                     details_values.append((row[0], row[1], int(row[2]), row[3], row[4]))
 

@@ -22,7 +22,6 @@ def run_query():
         access_token=os.getenv("DATABRICKS_KEY"),
     ) as connection:
         with connection.cursor() as cursor:
-            # Example of a join query between the two tables
             cursor.execute(
                 """
                 WITH joined_biopics AS (
