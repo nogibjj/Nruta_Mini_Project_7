@@ -1,5 +1,5 @@
 from mylib.extract import extract
-from mylib.query import query
+from mylib.query import run_query
 from mylib.transform_load import load
 
 # Extract
@@ -12,4 +12,4 @@ load()
 
 # Query
 print("Querying data...")
-query()
+run_query()

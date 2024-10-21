@@ -13,7 +13,7 @@ ORDER BY d.title ASC;
 """
 
 
-def query():
+def run_query():
     load_dotenv()
 
     with sql.connect(
@@ -44,5 +44,30 @@ def query():
     return "Query successful."
 
 
+def filter_by_year(year):
+    load_dotenv()
+
+    with sql.connect(
+        server_hostname=os.getenv("SERVER_HOSTNAME"),
+        http_path=os.getenv("HTTP_PATH"),
+        access_token=os.getenv("DATABRICKS_KEY"),
+    ) as connection:
+        with connection.cursor() as cursor:
+            # Use f-string to insert year directly into the SQL query
+            query = f"""
+                SELECT b.title, b.year_release, s.subject
+                FROM nmc_biopics_details b
+                JOIN nmc_biopics_subjects s ON b.title = s.title
+                WHERE b.year_release = {year}
+            """
+            cursor.execute(query)
+            result = cursor.fetchall()
+            for row in result:
+                print(row)
+        cursor.close()
+    return "Filter by year successful."
+
+
 if __name__ == "__main__":
-    query()
+    run_query()
+    filter_by_year()

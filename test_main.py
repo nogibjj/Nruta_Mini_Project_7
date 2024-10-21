@@ -1,6 +1,7 @@
+import main
 from mylib.extract import extract
 from mylib.transform_load import load
-from mylib.query import query
+from mylib.query import run_query
 
 
 def test_extract():
@@ -21,7 +22,7 @@ def test_query():
     """Test query"""
     # Ensure the query function returns a success message
     expected_message = "Query successful."
-    test3 = query()
+    test3 = run_query()
     assert test3 == expected_message
 
 
