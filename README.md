@@ -1,4 +1,4 @@
-
+[![CI](https://github.com/nogibjj/Nruta_Mini_Project_7/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Nruta_Mini_Project_7/actions/workflows/cicd.yml)
 
 # IDS 706 Week 7 Mini Project - Packaging a Python Script into a Command-Line Tool (or Rust)
 
@@ -53,7 +53,7 @@ The data for this project comes from the `biopics.csv` dataset provided by FiveT
 - `nmc_biopics_details`: This table contains core information about each biopic, such as the title, release year, and other relevant attributes.
 - `nmc_biopics_subjects`: This table includes details about the subjects or individuals the biopics are based on, including the number of subjects featured and their respective roles.
 
-## 🗃️ SQL Query
+## 🗃️ Complex SQL Query
 Once the data was split, I constructed the following query to analyze the average release year of the biopics alongside the subjects they feature:
 
 ```
@@ -78,6 +78,38 @@ Explanation:
 - `GROUP BY`: Groups the results by biopic title, number of subjects, and the subjects themselves to ensure we get accurate averages and associations.
 - `ORDER BY`: Sorts the output in ascending order by the biopic title for easier readability.
 
-## 🎯 Expected Output
+## 💻 CLI Setup
+
+This project includes a command-line interface (CLI) for easy interaction with the application.
+
+### File Descriptions
+- **`setup.py`**: Packaging script for easy installation.
+- **`cli_tool.py`**: Main module for defining CLI commands.
+- **`biopics-cli`**: Command-line script for user interaction.
+
+### Installation Instructions
+Run the following command in the terminal:
+
+```
+pip install .
+```
+
+### Year Query
+
+The Year Query feature allows users to filter biopic data by the release year. This functionality can be particularly useful for analyzing trends in biopics over different periods. 
+
+#### Usage
+
+To execute a year query, run the following command:
+
+```
+python cli_tool.py --year <YEAR>
+```
+
+## 🎯 Complex Query Expected Output
 After running the SQL query, the output is as follows:
 <img width="990" alt="Screenshot 2024-10-18 at 17 22 12" src="https://github.com/user-attachments/assets/7a4959f4-840b-47d4-af08-f7c234d0595d">
+
+## 📃 CLI Expected Output
+After running the Year Query, the expected output will be a list of biopics filtered by the specified release year. Here’s an example of what the output might look like:
+

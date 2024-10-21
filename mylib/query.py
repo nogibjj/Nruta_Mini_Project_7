@@ -55,7 +55,7 @@ def filter_by_year(year):
         with connection.cursor() as cursor:
             # Use f-string to insert year directly into the SQL query
             query = f"""
-                SELECT b.title, b.year_release, s.subject
+                SELECT DISTINCT b.title, b.year_release, s.subject
                 FROM nmc_biopics_details b
                 JOIN nmc_biopics_subjects s ON b.title = s.title
                 WHERE b.year_release = {year}
